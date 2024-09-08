@@ -7,17 +7,17 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Codibex is ERC721, ERC721Enumerable, ERC721Pausable, Ownable {
+contract CodibexNFT is ERC721, ERC721Enumerable, ERC721Pausable, Ownable {
     using Strings for uint256;
     string public baseURI = "ipfs://Qmf9H6sHjhxEvZ74nFVpqQhMnG6BGCLhRK3yywP1UkGStD/";
     string public baseExtension = ".json";
-    uint256 public cost = 0.05 ether;
+    uint256 public cost = 0.001 ether;
     uint256 public maxSupply = 6;
     uint256 public maxMintAmount = 2;
 
     constructor(
         address initialOwner
-    ) ERC721("Codibex", "CDB") Ownable(initialOwner) {}
+    ) ERC721("CodibexNFT", "CNT") Ownable(initialOwner) {}
 
     function _baseURI() internal view virtual override returns (string memory) {
         return baseURI;
